@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.imgLogo {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.imgLogo:hover {
+    transform: scale(1.05);
+}
