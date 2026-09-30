@@ -74,6 +74,18 @@ table td {
     color: #f91257;
 }
 
+.btnMore {
+    background-color: #12f98a;
+    border: 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
 @media screen and (max-width: 600px) {
     table {
         border: 0;
