@@ -1,14 +1,27 @@
-import styles from "./Home.module.css"
-import { BsSearch } from "react-icons/bs"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import styles from "./Home.module.css";
+import { BsSearch } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const [input, setInput] = useState("");
+    const navigate = useNavigate();
+
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+
+        if (!input) return;
+        navigate(`/details/${input}`);
+    };
+
     return (
         <div>
-            <form className={styles.formulario} >
+            <form className={styles.formulario} onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="Digite o nome da moeda... Ex bitcoin"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
                 />
                 <button type="submit">
                     <BsSearch />
@@ -33,7 +46,10 @@ const Home = () => {
                                 <span>Bitcoin</span> | BTC
                             </Link>
                         </td>
-                        <td className={styles.tdLabel} data-Label="Valor Mercado">
+                        <td
+                            className={styles.tdLabel}
+                            data-Label="Valor Mercado"
+                        >
                             1T
                         </td>
 
